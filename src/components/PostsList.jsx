@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPostsAndComments } from '../redux/slices/thunks';
 import Post from './Post';
 
 const PostsList = () => {
-  const [posts, setPosts] = useState([]);
-  const [comments, setComments] = useState([]);
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
+  const comments = useSelector((state) => state.comments.comments);
 
   useEffect(() => {
-    const fetchPostsAndComments = async () => {
-      const [postsResponse, commentsResponse] = await Promise.all([
-        fetch('https://api1.com/posts'),
-        fetch('https://api2.com/comments')
-      ]);
-      const posts = await postsResponse.json();
-      const comments = await commentsResponse.json();
-      setPosts(posts);
-      setComments(comments);
-    };
-
-    fetchPostsAndComments();
-  }, []);
+    dispatch(fetchPostsAndComments());
+  }, [dispatch]);
 
   return (
     <div>
@@ -35,6 +27,7 @@ const PostsList = () => {
 };
 
 export default PostsList;
+
 
 
 
