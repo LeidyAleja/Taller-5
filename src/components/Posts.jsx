@@ -6,21 +6,18 @@ import Post from "./Post";
 
 function Posts() {
     const dispatch = useDispatch();
-    const [posts, setPosts] = useState([]); // Estado local para almacenar los posts
+    const [posts, setPosts] = useState([]);
 
-    // Llamada inicial para traer los posts
     useEffect(() => {
         getPostsInformation();
     }, []);
 
     const getPostsInformation = async () => {
         try {
-            // Espera la respuesta del thunk
             const response = await dispatch(thunks[ACTIONS.FETCH_POSTS]());
 
-            // Limitar a los primeros 15 posts
             const limitedPosts = response.payload.slice(0, 15);
-            setPosts(limitedPosts); // Asignar solo los primeros 15 al estado
+            setPosts(limitedPosts);
         } catch (error) {
             console.error("Error obteniendo los posts:", error);
         }
