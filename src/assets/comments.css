@@ -1,0 +1,93 @@
+/* Estilo general del contenedor de comentarios */
+.comments-container {
+    background-color: #f4f6f9;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Encabezado del acordeón */
+  .comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #cae0fc;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s;
+  }
+  
+  .comments-header:hover {
+    background-color: #cae0fc;
+  }
+  
+  /* Título de los comentarios */
+  .comments-title {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  /* Contenido del acordeón */
+  .comments-content {
+    padding: 10px 15px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  /* Tarjeta de cada comentario */
+  .comment-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .comment-card:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Encabezado del comentario */
+  .comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  /* Avatar del usuario */
+  .comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  /* Información del comentario */
+  .comment-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comment-author {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-email {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Cuerpo del comentario */
+  .comment-body {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
